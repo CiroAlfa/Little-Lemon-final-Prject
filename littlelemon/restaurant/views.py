@@ -36,4 +36,12 @@ class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
+# views.py
+from rest_framework import viewsets
+from .models import Booking
+from .serializers import BookingSerializer
+
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 
