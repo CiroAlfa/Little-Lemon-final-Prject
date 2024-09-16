@@ -12,7 +12,10 @@ urlpatterns = [
     #path('', sayHello, name='sayHello'),
     path('', include(router.urls)),
     path('', views.index, name='index' ),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('menu/', views.MenuItemsView.as_view(), name='menu-items'),
+    path('menu/<int:pk>/', views.SingleMenuItemView.as_view(), name='single-menu-item'),
+
 
     
     ]
